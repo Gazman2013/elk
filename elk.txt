@@ -1,0 +1,62 @@
+    1  cd ~/
+    2  ls
+    3  mkdir home_15
+    4  chmod 777 home_15/
+    5  cd home_15/
+    6  sudo apt-get remove docker docker-engine docker.io containerd runc sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg \ lsb-release -y curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg –dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg echo \ “deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable” | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+    7  docker --version
+    8  clear
+    9  sudo apt-get remove docker docker-engine docker.io containerd runc
+   10  sudo apt-get update
+   11  sudo apt-get install     apt-transport-https     ca-certificates     curl     gnupg     lsb-release
+   12  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   13  echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+   14    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   15  sudo apt-get update
+   16  sudo apt-get install docker-ce docker-ce-cli containerd.io
+   17  docker --version
+   18  sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   19  sudo chmod +x /usr/local/bin/docker-compose
+   20  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+   21  docker-compose --version
+   22  git clone https://github.com/deviantony/docker-elk.git
+   23  ls
+   24  cd docker-elk/
+   25  ls
+   26  docker-compose up -d
+   27  apt install net-tools
+   28  df -h
+   29  netstat -antp   
+   30  docker ps
+   31  curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.12.0-amd64.deb
+   32  ls
+   33  sudo dpkg -i metricbeat-7.12.0-amd64.deb
+   34  dpcg -I
+   35  dpkg -I
+   36  dpkg -l
+   37  nano /etc/metricbeat/metricbeat.yml
+   38  sudo metricbeat modules enable docker
+   39  ls -lah
+   40  ls /etc/metricbeat/modules.d/
+   41  nano  /etc/metricbeat/modules.d/docker.yml
+   42  metricbeat setup
+   43  service metricbeat start
+   44  curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.12.0-amd64.deb
+   45  sudo dpkg -i filebeat-7.12.0-amd64.deb
+   46  nano /etc/filebeat/filebeat.yml
+   47  filebeat modules enable system
+   48  filebeat setup
+   49  service filebeat start
+   50  ls /etc/filebeat/modules.d/
+   51  nano /etc/filebeat/modules.d/system.yml
+   52  nano /etc/filebeat/filebeat.yml
+   53  nano  /etc/metricbeat/modules.d/docker.yml
+   54  nano /etc/filebeat/modules.d/system.yml
+   55  sudo filebeat setup
+   56  nano /etc/filebeat/modules.d/system.yml
+   57  nano /etc/filebeat/filebeat.yml
+   58  sudo filebeat setup
+   59  nano /etc/filebeat/filebeat.yml
+   60  sudo filebeat setup
+   61  filebeat setup
+   62  history
